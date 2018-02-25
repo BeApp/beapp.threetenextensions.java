@@ -1,0 +1,74 @@
+# OS junk files
+.DS_Store
+[Tt]humbs.db
+
+# Temp files
+*~
+
+#Java
+*.class
+
+#Scala
+.worksheet
+.cache
+
+#SVN
+.svn
+
+#Android generated
+bin
+gen
+lint.xml
+
+#Eclipse
+.project
+.classpath
+.settings
+.checkstyle
+.apt_generated
+.metadata
+
+#IntelliJ IDEA - Based on https://intellij-support.jetbrains.com/entries/23393067
+#workspace.xml
+#tasks.xml
+#.idea/libraries
+#*.iws
+#classes
+#out
+#gen-external-apklibs
+
+#IntelliJ IDEA
+.idea
+*.iml
+*.ipr
+*.iws
+classes
+out
+gen-external-apklibs
+captures
+
+#Maven
+target
+release.properties
+pom.xml.*
+
+#Gradle
+.gradle
+.gradletasknamecache
+build
+
+#Ant
+ant.properties
+local.properties
+proguard.cfg
+proguard-project.txt
+
+.springBeans
+
+#Crashlytics
+com_crashlytics_export_strings.xml
+crashlytics-build.properties
+
+# NodeJS
+node_modules
+npm-debug.log
