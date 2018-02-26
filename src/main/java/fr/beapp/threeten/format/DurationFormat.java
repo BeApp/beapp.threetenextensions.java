@@ -8,17 +8,30 @@ import java.util.concurrent.ConcurrentMap;
 public class DurationFormat {
 
     private static final String BUNDLE_NAME = "fr.beapp.threeten.format.messages";
-    private static final ConcurrentMap<Locale, DurationFormatter> FORMATTERS = new ConcurrentHashMap<>();
+    private static final ConcurrentMap<Locale, DurationFormatter> WORD_FORMATTERS = new ConcurrentHashMap<>();
 
     private DurationFormat() {
     }
 
+    public static DurationFormatter shortBased() {
+        return new DurationFormatterBuilder()
+                .appendHours()
+                .valueFormat(true, "%02d")
+                .appendLiteral(":")
+                .appendMinutes()
+                .valueFormat(true, "%02d")
+                .appendLiteral(":")
+                .appendSeconds()
+                .valueFormat(true, "%02d")
+                .toFormatter();
+    }
+
     public static DurationFormatter wordBased(Locale locale) {
-        DurationFormatter pf = FORMATTERS.get(locale);
+        DurationFormatter pf = WORD_FORMATTERS.get(locale);
         if (pf == null) {
             ResourceBundle resourceBundle = ResourceBundle.getBundle(BUNDLE_NAME, locale);
             pf = wordBased(resourceBundle, locale);
-            DurationFormatter existing = FORMATTERS.putIfAbsent(locale, pf);
+            DurationFormatter existing = WORD_FORMATTERS.putIfAbsent(locale, pf);
             if (existing != null) {
                 pf = existing;
             }
