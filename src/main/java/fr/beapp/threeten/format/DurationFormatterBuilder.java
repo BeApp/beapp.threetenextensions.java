@@ -113,10 +113,6 @@ public class DurationFormatterBuilder {
         long getValue(Duration duration, Locale locale);
     }
 
-    interface ValueAggregator {
-        long getValue(Duration duration, Locale locale);
-    }
-
     class StringLiteralPrinter implements DurationPrinter {
         private final String literal;
 
