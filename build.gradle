@@ -27,7 +27,7 @@ ext {
     libraryName = 'Beapp ThreeTen extensions'
     libraryGroupId = 'fr.beapp.threeten'
     libraryArtifactId = 'threeten-extensions'
-    libraryVersion = '0.1'
+    libraryVersion = '1.0'
     libraryPackaging = 'jar'
 
     libraryDescription = 'A library providing extas features for ThreeTen'
