@@ -7,6 +7,7 @@ import java.util.Locale;
 
 /**
  * Controls the formatting for {@link Duration} classes.
+ * <p>
  * This was inspired from JodaTime's {@code PeriodFormatter} class.
  */
 public class DurationFormatter {
