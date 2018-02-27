@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
- * Provides formatter for Duration classes.
+ * Provides formatter for {@link org.threeten.bp.Duration} classes.
  * This was inspired from JodaTime's {@code PeriodFormat} class.
  */
 public class DurationFormat {
