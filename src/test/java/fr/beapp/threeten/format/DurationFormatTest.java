@@ -12,6 +12,19 @@ public class DurationFormatTest {
     private DurationFormatter formatterFR = DurationFormat.wordBased(Locale.FRENCH);
 
     @Test
+    public void shortBased() {
+        DurationFormatter formatter = DurationFormat.shortBased();
+
+        Assert.assertEquals("00:00:00", formatter.format(Duration.ofSeconds(0)));
+        Assert.assertEquals("00:00:10", formatter.format(Duration.ofSeconds(10)));
+        Assert.assertEquals("00:03:10", formatter.format(Duration.ofMinutes(3).plusSeconds(10)));
+        Assert.assertEquals("01:03:10", formatter.format(Duration.ofHours(1).plusMinutes(3).plusSeconds(10)));
+        Assert.assertEquals("01:00:00", formatter.format(Duration.ofHours(1)));
+
+        Assert.assertEquals("00:00:00", formatter.format(Duration.ofDays(1)));
+    }
+
+    @Test
     public void wordBased_simple() {
         assetWithLocales("1 second", "1 seconde", Duration.ofSeconds(1));
         assetWithLocales("15 seconds", "15 secondes", Duration.ofSeconds(15));
