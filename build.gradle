@@ -3,6 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2'
     }
 }
 
@@ -43,3 +44,17 @@ ext {
     allLicenses = ["Apache-2.0"]
 }
 apply from: 'https://bitbucket.org/beappers/beapp.gradle/raw/master/publish-library.gradle'
+
+
+apply plugin: 'org.sonarqube'
+sonarqube {
+    properties {
+        property 'sonar.host.url', 'https://sonar.beapp.fr'
+        property 'sonar.projectKey', "${libraryGroupId}:${libraryArtifactId}:java"
+        property 'sonar.projectName', "${libraryName} - Java"
+        property 'sonar.projectDescription', "${libraryDescription}"
+        property 'sonar.projectVersion', "${libraryVersion}"
+        property 'sonar.sourceEncoding', 'UTF-8'
+        property 'sonar.exclusions', '**/*Test.java'
+    }
+}
