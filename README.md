@@ -12,7 +12,7 @@ Add Beapp's repository in your project's repositories list, then add the depende
 repositories {
     jcenter()
     // ...
-    maven { url 'http://repository.beapp.fr/libs-release-local' }
+    maven { url 'https://repository.beapp.fr/libs-release-local' }
 }
 
 dependencies {
