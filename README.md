@@ -2,7 +2,7 @@
 
 This library provides some extras features for [ThreeTen](http://www.threeten.org/) project.
 
-Some features are inspired from JodaTime to fill a gap in ThreeTen library.It may be a simplification and not cover the whole scope for all languages. But it's enough for our uses-cases.
+Some of them are inspired from [JodaTime](http://www.joda.org/joda-time/). Beware that it's a simplified version and should not cover the whole scope for all languages, but it's enough for main uses-cases.
 
 # Installation
 
